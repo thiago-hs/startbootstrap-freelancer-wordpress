@@ -25,4 +25,17 @@ function add_theme_scripts() {
   wp_enqueue_script('freelancer-js', $tpl_directory . '/js/freelancer.min.js', array ( 'jquery' ), 1.0 , true);
   
 }
+
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
+function freelancer_custom_header_setup() {
+    $args = array(
+        'default-image'      => get_template_directory_uri() . '/img/profile.png',
+        'width'              => 256,
+        'height'             => 256,
+        'flex-width'         => true,
+        'flex-height'        => true
+    );
+    add_theme_support( 'custom-header', $args );
+}
+add_action( 'after_setup_theme', 'freelancer_custom_header_setup' );
