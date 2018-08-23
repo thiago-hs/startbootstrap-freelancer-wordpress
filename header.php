@@ -22,7 +22,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php bloginfo( 'name' ) ;?></a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -47,9 +47,9 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="<?php echo get_template_directory_uri() . '/img/profile.png'; ?>" alt="">
-        <h1 class="text-uppercase mb-0">Start Bootstrap</h1>
+        <h1 class="text-uppercase mb-0"><?php bloginfo( 'name' ) ;?></h1>
         <hr class="star-light">
-        <h2 class="font-weight-light mb-0">Web Developer - Graphic Artist - User Experience Designer</h2>
+        <h2 class="font-weight-light mb-0"><?php bloginfo( 'description' ) ;?></h2>
       </div>
     </header>
     
