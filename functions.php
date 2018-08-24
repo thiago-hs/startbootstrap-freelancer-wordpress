@@ -39,3 +39,18 @@ function freelancer_custom_header_setup() {
     add_theme_support( 'custom-header', $args );
 }
 add_action( 'after_setup_theme', 'freelancer_custom_header_setup' );
+
+function freelancer_generic_theme_supports(){
+  add_theme_support( 'post-thumbnails' );
+}
+add_action( 'after_setup_theme', 'freelancer_generic_theme_supports' );
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
