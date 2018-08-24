@@ -46,7 +46,9 @@
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="<?php echo get_template_directory_uri() . '/img/profile.png'; ?>" alt="">
+         <?php if ( get_header_image() ) : ?>
+            <img class="img-fluid mb-5 d-block mx-auto" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+          <?php endif; ?>
         <h1 class="text-uppercase mb-0"><?php bloginfo( 'name' ) ;?></h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0"><?php bloginfo( 'description' ) ;?></h2>
