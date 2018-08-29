@@ -82,7 +82,9 @@ function freelancer_customize_register( $wp_customize ){
     'panel' => '',
     'priority' => 160,
   ));
-
+  $wp_customize->remove_section('nav_menus');
+  $wp_customize->remove_section('static_front_page');
+  $wp_customize->remove_section('custom_css');
 }
 add_action( 'customize_register', 'freelancer_customize_register' );
   
