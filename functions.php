@@ -45,7 +45,46 @@ function freelancer_generic_theme_supports(){
 }
 add_action( 'after_setup_theme', 'freelancer_generic_theme_supports' );
 
-  
+function freelancer_customize_register( $wp_customize ){
+  $wp_customize->add_setting('about_title',array(
+    'sanitize_callback'=>'sanitize_text_field',
+    'default' =>"ABOUT"
+  ));
+  $wp_customize->add_setting('about_column_1',array(
+     'default' =>"Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.",
+    'sanitize_callback'=>'sanitize_textarea_field',
+  ));
+  $wp_customize->add_setting('about_column_2',array(
+    'sanitize_callback'=>'sanitize_textarea_field',
+    'default' =>"Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!"
+  ));
+  $wp_customize->add_control( 'about_title', array(
+    'label' => __( 'Title' ),
+    'desciption' => __('Edit the title of the text'),
+    'type' => 'text',
+    'section' => 'about',
+  ));
+  $wp_customize->add_control( 'about_column_1', array(
+    'label' => __( 'First Column' ),
+    'desciption' => __('Edit the first column of the text'),
+    'type' => 'textarea',
+    'section' => 'about',
+  ));
+  $wp_customize->add_control( 'about_column_2', array(
+    'label' => __( 'Second Column' ),
+    'desciption' => __('Edit the second column of the text'),
+    'type' => 'textarea',
+    'section' => 'about',
+  ));
+  $wp_customize->add_section( 'about', array(
+    'title' => __( 'About Me' ),
+    'description' => __( 'Tell a litle bit of yourself' ),
+    'panel' => '',
+    'priority' => 160,
+  ));
+
+}
+add_action( 'customize_register', 'freelancer_customize_register' );
   
   
   
